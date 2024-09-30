@@ -1,17 +1,17 @@
 {
-    "bindings": [
-      {
-        "authLevel": "anonymous",  // Authorization level for the function: anonymous, function, or admin
-        "type": "httpTrigger",     // The type of trigger, in this case, an HTTP trigger
-        "direction": "in",         // Specifies that this is an input (trigger)
-        "name": "req",             // The name of the variable holding the incoming request
-        "methods": ["get", "post"] // HTTP methods that the function accepts
-      },
-      {
-        "type": "http",            // This defines the HTTP response binding
-        "direction": "out",        // Specifies that this is an output
-        "name": "res"              // The name of the variable holding the outgoing response
-      }
-    ]
-  }
-  
+  "scriptFile": "index.js",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
