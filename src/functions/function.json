@@ -1,12 +1,12 @@
 {
-  "scriptFile": "../src/index.js", // Adjust the path based on relative location
+  "scriptFile": "index.js",
   "bindings": [
     {
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["get", "post"]
+      "methods": [ "get", "post" ]
     },
     {
       "type": "http",
