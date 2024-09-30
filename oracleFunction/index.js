@@ -3,7 +3,7 @@ const oracledb = require('oracledb');
 module.exports = async function (context, req) {
     const username = process.env.DB_USERNAME;  // Read from environment variable
     const password = process.env.DB_PASSWORD;  // Read from environment variable
-    const connectString = process.env.DB_CONNECTION_STRING;  // Read connection string from environment
+    const connectString = '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=tux-devpsdb1.lacitec.on.ca)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=salcc.lacitec.on.ca)))';  // Read connection string from environment
     let connection;
 
     const { studentId } = req.body;  // Extract studentId from the request body
