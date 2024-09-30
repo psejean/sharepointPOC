@@ -10,7 +10,7 @@ module.exports = async function (context, req) {
         connection = await oracledb.getConnection({
             user: username,
             password: password,
-            connectString: "your-oracle-db-connect-string"  // Replace with your Oracle connection string
+            connectString: "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=tux-devpsdb1.lacitec.on.ca)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=salcc.lacitec.on.ca)))"
         });
 
         context.log("Connected to the Oracle Database!");
