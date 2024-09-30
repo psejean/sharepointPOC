@@ -7,9 +7,8 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.0.0",
-    "oracledb": "^5.3.0"  // Example if you're using the oracledb package
+    "@azure/functions": "^4.0.0"
   },
   "devDependencies": {},
-  "main": "src/functions/oracleFunction.js"  // Set this to the correct entry file for the function
+  "main": "src/functions/oracleFunction.js" 
 }
