@@ -1,5 +1,5 @@
 {
-  "scriptFile": "index.js",
+  "scriptFile": "../src/index.js", // Adjust the path based on relative location
   "bindings": [
     {
       "authLevel": "anonymous",
