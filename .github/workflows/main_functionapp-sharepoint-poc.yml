@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './src'  # Target 'src' directory where functions are located
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'  # Set this to the root of the project
   NODE_VERSION: '20.x'
 
 jobs:
@@ -23,18 +23,12 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: 'Resolve Project Dependencies Using Npm'
-        shell: bash
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-          popd
+          npm install  # Install dependencies in the root folder
 
       - name: Zip artifact for deployment
         run: |
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          zip -r ../release.zip .
+          zip -r release.zip ./*  # Zip the entire project directory
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -73,4 +67,4 @@ jobs:
         with:
           app-name: 'functionapp-sharepoint-poc'
           slot-name: 'Production'
-          package: .
+          package: .  # Deploy the full project
